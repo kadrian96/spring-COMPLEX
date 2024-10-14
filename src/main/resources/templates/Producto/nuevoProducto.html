@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{generico/genericoUI}"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<section layout:fragment="content">
+    <h1>Crear producto</h1>
+    <form th:action="@{/guardarProducto}" method="post" th:object="${nuevoProducto}">
+        <div class="form-group">
+            <label class="form-label">Nombre producto</label>
+            <input type="text" class="form-control" th:field="*{nombre}">
+        </div>
+        <div class="form-group">
+            <label class="form-label">Precio</label>
+            <input type="text" class="form-control" th:field="*{precio}">
+        </div>
+        <div class="form-group">
+            <label class="form-label">Stock</label>
+            <input type="text" class="form-control" th:field="*{stock}">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</section>
+</body>
+</html>
